@@ -1,0 +1,203 @@
+---
+name: hogwash
+description: "Eliminates AI-generated writing, code, and design patterns through manual line-by-line audit. Use when writing, editing, or reviewing content that may contain AI slop: banned vocabulary, structural tells, code anti-patterns, formatting artifacts. Two-pass process: rewrite then self-critique. Evidence-tiered, synthesized from 20+ academic, industry, and community sources (see each reference file for citations). Covers English prose, code, and design (domains/); cross-lingual content and model-family tells as cross-cutting lenses (lenses/); resumes/CVs with field-specific vocabulary (domains/resume/)."
+metadata:
+  version: 2.19.0
+---
+
+# HOGWASH
+
+*For a human-facing map of this architecture and why it's shaped this way, see README.md. This file is Claude's dispatch logic; that one is for a person navigating the repo.*
+
+Strip AI defaults from writing, code, and design. Read each line manually with full context. Do not use regex or automated substitution. Automated substitution without judgment produces wrong results.
+
+**Core files — always relevant once this skill triggers:**
+- **[core/vocabulary.md](core/vocabulary.md)** — banned word lists with evidence tiers
+- **[core/phrases.md](core/phrases.md)** — banned phrases, openers, structural formulas
+- **[core/structural-patterns.md](core/structural-patterns.md)** — durable rhetorical and structural tells
+- **[audit-checklist.md](audit-checklist.md)** — full self-audit checklist
+
+**domains/ — load based on what kind of content this actually is:**
+- **[domains/code.md](domains/code.md)** — code-specific anti-patterns
+- **[domains/design.md](domains/design.md)** — UI/UX and visual design slop
+- **[domains/fiction.md](domains/fiction.md)** — fiction, creative writing, and screenwriting. A different aim from the rest of this skill: optimizes for experience, not a clear claim.
+- **[domains/presentations.md](domains/presentations.md)** — slide decks, mostly slide-scale instances of patterns already in core/ and domains/design.md, plus real new material for investor pitch decks specifically.
+- **[domains/legal.md](domains/legal.md)** — legal writing. Formal hedging and boilerplate structure are often correct here, not tells. Centered on the highest-stakes finding in this skill: fabricated case citations in real court filings.
+- **domains/prose/** — one file per genre, load only the one that matches: [academic.md](domains/prose/academic.md), [technical-docs.md](domains/prose/technical-docs.md), [marketing.md](domains/prose/marketing.md), [support.md](domains/prose/support.md), [email.md](domains/prose/email.md), [security-reporting.md](domains/prose/security-reporting.md), [social-linkedin.md](domains/prose/social-linkedin.md), [tone-calibration.md](domains/prose/tone-calibration.md) (intent, not genre, cuts across the others)
+- **[domains/resume/patterns.md](domains/resume/patterns.md)** — resumes/CVs: a different medium, mostly overrides everything above. Cover Letters and LinkedIn Profiles included as hybrid cases.
+- **domains/resume/industries/** — field-specific resume vocabulary, load alongside patterns.md: [tech.md](domains/resume/industries/tech.md), [administrative.md](domains/resume/industries/administrative.md). See that folder's README.md before adding a new one.
+
+**lenses/ — cross-cutting, apply on top of whichever domain file you loaded:**
+- **[lenses/language.md](lenses/language.md)** — scope note for non-English content: what's universal vs. English-specific
+- **[lenses/model-tells.md](lenses/model-tells.md)** — supplementary: vocabulary/structure/framing tells by model family. High-churn, review monthly. Not part of the core audit.
+
+**Medium check, before loading anything else:** prose (blog, docs, email, report) → the matching domains/prose/ file + core/structural-patterns.md. Fiction, screenwriting, or other creative writing → domains/fiction.md instead; most of core/structural-patterns.md's specificity-focused rules don't apply the same way here, telling is sometimes correct. Slide deck or presentation → domains/presentations.md, loaded alongside domains/design.md and core/structural-patterns.md rather than instead of them. Legal writing → domains/legal.md instead; formal hedging and boilerplate are often the correct convention there, not a tell, and this is not a citation-verification tool. Code → domains/code.md. Visual design → domains/design.md. Resume or CV → domains/resume/patterns.md instead, most of the rest of this skill doesn't apply; add the matching domains/resume/industries/ file if the candidate's field is covered there. Non-English content, any medium → check lenses/language.md first for what transfers. Know which model wrote it? → lenses/model-tells.md is a supplementary check, not required.
+
+---
+
+## CORE PRINCIPLES
+
+**AI smell is the absence of a writer, not the presence of specific words.** No visible edge where a specific person could be wrong. Generic subjects ("many developers struggle with...") stand in for "I." Every ban in this skill is downstream of that one fact, which is also why fixing stance and structure matters more than fixing vocabulary and symbols. See "Fix Order" below.
+
+**Wordlists expire. Structure patterns don't.** "Delve" has largely disappeared from GPT outputs by 2025, trained away. Vocabulary lists need quarterly review. Structural patterns in core/structural-patterns.md are durable across all model families. Weight them most heavily.
+
+**Voiceless sterile prose is just as obvious as slop.** The goal is not neutral. It is actual thought on the page. Avoiding AI patterns is half the job; the other half is putting a human behind the writing.
+
+**Fixing slop badly just swaps one uniformity for another.** The common failure after cutting AI phrasing is smoothing everything back into tidy, even prose, correct this time, still flattened toward a different target. Keep genuine unevenness on purpose: short lines where they were actually short, one long sentence left in where the original writer really did ramble into a point. Slightly uneven and specific beats flawless and blank, every time.
+
+**Write toward something, not just away from a list.** Before auditing, apply the positive principles below. Bans alone produce sanitized nothing.
+
+---
+
+## PASS 0 — POSITIVE PRINCIPLES (Apply Before Banning)
+
+Derived from Strunk's *Elements of Style*: what to do, not just what to avoid.
+
+1. **Use active voice.** Passive voice hides actors. Name who does the thing.
+2. **Put statements in positive form.** "He was not honest" → "He lied." State what is, not what isn't.
+3. **Use definite, specific, concrete language.** Prefer the particular to the general, the concrete to the abstract. A number beats "significant." A name beats "experts."
+4. **Omit needless words.** Every word should earn its place. "Due to the fact that" → "because." "At this point in time" → "now."
+5. **Place emphatic words at the end of the sentence.** The last word carries the most weight. Don't waste it on a preposition.
+6. **Vary sentence length deliberately.** Short when the idea is done. Longer when it needs room. The variance signals a mind pacing itself against the content.
+7. **Have an opinion.** Don't just report facts. React to them. "I don't know how to feel about this" is more human than neutral lists of pros and cons.
+8. **Allow some confusion.** Perfect structure feels algorithmic. Tangents, asides, half-formed thoughts are human. Let some mess in where it serves the piece.
+9. **Name limitations honestly.** What the thing doesn't do. What edge cases it fails on. What versions it requires. AI claims comprehensive coverage; humans name the gaps.
+10. **Use subheadings as scannable statements (English-language content).** Not "Background": "Why the existing approach fails." Not "Results": "Query time dropped from 847ms to 12ms." This is an English convention, not a universal one: claim-shaped headings read as a foreign, performed AI tell in at least Japanese. For non-English content, see lenses/language.md before applying this rule.
+
+---
+
+## AUDIT METHODOLOGY
+
+### Pattern Stacking
+When multiple weak signals converge on the same phrase (bold emphasis, an em dash, and a coined term, all in one sentence), that is one strong tell, not three separate flags. Consolidate overlapping patterns on the same phrase into one finding. Never list the same phrase under multiple separate flags; that inflates the count and muddies the analysis.
+
+### Fix Order
+Audit stance and structure before vocabulary and punctuation. A piece with a real, specific, falsifiable claim behind it barely reads as AI even with a stray tell left in. A piece with every banned word and em dash removed still reads as AI if there's no actual claim being made. Hitting every quantified threshold in this skill is not the goal; it's a byproduct of fixing the actual writing. If time-constrained, run PASS 0 and the structure/specificity portions of the audit first; treat vocabulary and formatting passes as the last 20%, not the first.
+
+### Severity Model
+- **Tier 1 — Replace automatically.** Wrong in virtually all contexts.
+- **Tier 2 — Replace when clustered.** Two or more Tier 2 signals in the same paragraph warrant revision. One alone may be acceptable.
+- **Tier 3 — Replace at high density.** Flag when pattern appears more than twice per 500 words.
+
+### False Positive Protection
+Do not flag these as AI tells without additional context:
+
+| Pattern | When it's NOT a tell |
+|---|---|
+| Curly quotes | Standard in Word, Google Docs, and formatted content — only a tell in plain-text/code contexts |
+| "As of [date]" | Standard journalism for time-sensitive data — only a tell when hedging rather than citing a real source |
+| Title case headings | Weak signal alone — only meaningful when stacked with other tells |
+| Single "serves as" | One instance in an otherwise normal paragraph is fine — copula avoidance requires clustering |
+| Group of three items | Only flag tricolons when the third item adds nothing or near-duplicates the first two |
+| Negative parallelism | One "It's not X, it's Y" per 1,000 words is fine — the tell is frequency relative to piece length |
+
+Also exempt: technical terms in domain-standard meaning, quoted source material, legal/compliance required phrasing, code identifiers.
+
+### Density Thresholds
+
+| Metric | Clean | Light | Moderate | Heavy |
+|---|---|---|---|---|
+| Slop markers per 100 words | 0–1.0 | 1.0–2.5 | 2.5–5.0 | 5.0+ |
+| Em dashes per 1,000 words | 0–2 | 3–5 | 6+ = strong signal | — |
+| Bullets as % of content | <40% | 40–60% | >60% = AI tendency | — |
+| Sentence length SD | >10 = human | 5–10 | <5 = AI monotony | — |
+
+**Co-occurrence flag:** Three Tier 1 words in any 100-word window = definitive AI signal regardless of individual density. Full rewrite required.
+
+**Type-Token Ratio (TTR):** Low TTR = synonym cycling, even when individual synonyms aren't obvious. If the same concept cycles through 4+ different words in one paragraph, that's the pattern.
+
+**Consecutive sentence similarity:** Flag any two adjacent sentences with the same subject position, same clause structure, and same length, regardless of whether individual sentences trigger other rules.
+
+---
+
+## DIAGNOSTIC TESTS
+
+Run these before and after revision.
+
+**The Specificity Test (root cause):** For every generalization ("in recent years," "industry leaders," "significant growth"), ask: "What specific fact has AI replaced with a generic?" A name, date, number, location. Supply it or acknowledge the uncertainty directly.
+
+**The Distinctiveness Test:** "Would a reader immediately identify this as AI-generated?" Find the sentence that gives it away first. Fix that one. Repeat.
+
+**The Company Test:** "Could this sentence appear in any other company's blog by swapping a few nouns?" If yes, make it specific to this product, project, or context.
+
+**The Read-Aloud Test:** Read the piece out loud. Flag anything that: no human would actually say in conversation, makes you cringe slightly, feels like it's trying too hard to sound smart, or could describe any topic by swapping nouns.
+
+**The Golden Sentence Test:** If a sentence sounds like it was designed to be screenshot and shared, a quotable aphorism, rewrite it. "Innovation is not a destination; it is a journey." Delete.
+
+---
+
+## TONE CALIBRATION BY POST TYPE
+
+Match voice to intent, not just content. Condensed here; full version with evidence per intent is domains/prose/tone-calibration.md.
+
+**Technical** (knowledgeable peer): Reader knows basics, wants specifics. Evidence = code, numbers, named packages. No setup, no inspiring framing. Start with what it does.
+
+**Vision** (opinionated builder with receipts): Reader is skeptical, needs convincing. Evidence = real-world examples, before/after, objections addressed. State the position first, then the evidence.
+
+**Tutorial** (experienced guide who made the mistakes): Reader wants to follow along. Evidence = runnable examples, expected output, common pitfalls named explicitly. Complete walkthrough, no missing steps.
+
+For voice matching to a specific person: see Voice Calibration section below.
+
+---
+
+## SCORING RUBRIC
+
+Rate 1–10 per dimension. Below 35/50: revise.
+
+| Dimension | Question |
+|---|---|
+| **Directness** | Statements or announcements? Statements score higher. |
+| **Rhythm** | Varied or metronomic? SD > 5 words across 500-word sample scores higher. |
+| **Trust** | Respects reader intelligence, or over-explains? |
+| **Authenticity** | Sounds like a person, or a demo of a writing assistant? |
+| **Density** | Anything cuttable? Less cuttable = higher. |
+
+---
+
+## WRITER / REVIEWER SEPARATION
+
+For high-impact work, separate the passes. The same pass must not write and self-approve.
+
+**Writer pass:** Make changes. Lock behavior with regression tests first (code). Run one smell-focused pass at a time. Stay within the requested scope. Do not silently expand into adjacent files.
+
+**Reviewer pass:** Do not start by editing. Review the plan, changed files, verification evidence. Produce a verdict. Hand changes back to a separate writer pass.
+
+---
+
+## VOICE CALIBRATION
+
+Provide 2–3 paragraphs of the target person's actual writing. Analyze:
+- Average sentence length and variance
+- Preferred connective words (they have some and avoid others)
+- Fragments vs. complete sentences
+- First-person presence or avoidance
+- Ratio of declarative to qualifying statements
+- Recurring vocabulary or metaphor patterns
+
+Apply as a positive template. The goal is not neutral. It is the person's voice.
+
+---
+
+## QUICK REFERENCE
+
+**Delete without replacement:**
+Great question · I hope this helps · Let me know if you need any modifications · It's worth noting · Needless to say · Let's dive in · In today's world · Certainly · Moreover · Furthermore · Additionally · Here's the thing · Let me be clear · Let that sink in · The best part? · That's it. That's the [noun]. · And here's the kicker · Enter: [thing]
+
+**Replace with simpler verbs:**
+serves as → is · boasts → has · showcases → shows · leverages → uses · fosters → builds · empowers → lets · aims to → does · encompasses → includes · facilitates → enables · commenced → began · utilized → used · illuminate → show · unpack → explain · navigate → work through
+
+**Always name the actor:**
+"the data suggests" → "the 2024 Pew study found" · "experts believe" → "[Name] (year) argues" · "the market rewards" → "buyers pay more for" · "technology enables" → "this library lets you"
+
+**Structural tells (load core/structural-patterns.md for full list):**
+Specificity erasure · Rule of Three · Symmetric conclusions · Tricolon alliteration · Challenges-Triumph boilerplate · Emotional register uniformity · Every-paragraph-resolves · Conjunctive headings · Sentence-length monotony · Bullet overuse
+
+**Thresholds:**
+Em dashes: 6+/1,000 words = strong signal
+Cluster: 3 Tier 1 words in 100-word window = full rewrite
+Bullets: >60% = AI tendency
+Sentence SD: <5 words = AI monotony
+
+---
+
+*v2.19.0 — July 2026. Wordlist section (core/vocabulary.md) requires quarterly review, due now (last dated April 2026). Structural patterns are stable. v2.8 restructured the whole skill into core/, domains/, and lenses/. v2.9–v2.15 added domains/fiction.md, domains/presentations.md, domains/prose/email.md, deepened academic.md, closed the em-dash debt, added README.md, and added code.md's Workflow Layer. v2.16 added scripts/self_check.py. v2.17 standardized the Sources-section convention across 6 files and closed a real gap: a detector-data-reliability caution that was researched but never shipped past the standalone research doc. v2.18 adds domains/legal.md, the highest-stakes file in this skill: fabricated case citations tracked in a maintained academic database (roughly 200 cases mid-2025, past 1,800 as of this writing, real sanctions, one canceled trial), the sharpest possible instance of domains/code.md's structurally-plausible-but-functionally-empty question, and a fifth independent confirmation of Untailored Is the Real Tell, this time from Anthropic's own claude-for-legal plugin documentation. v2.19 renames the skill Hogwash, closing the naming decision that had been open since v2.18: the old name was already taken by several unrelated projects. Rename plus a scripts/self_check.py scope fix (it now skips adr/, research/, and repo tooling, which aren't written to these rules); no audit rule changed.*

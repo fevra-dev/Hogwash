@@ -1,0 +1,12 @@
+# macOS
+.DS_Store
+
+# Local-only working material — not part of the shipped skill
+research/
+logos/
+
+# Node tooling (lint gate devDeps, ADR-0001)
+node_modules/
+
+# Session-local agent settings
+.claude/settings.local.json

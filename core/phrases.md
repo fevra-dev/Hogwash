@@ -101,6 +101,10 @@ After: "The Statistical Institute of Catalonia was established in 1989 to collec
 
 Fix: The inflation, "marking a pivotal moment," adds nothing. Delete and replace with what the event actually meant.
 
+**Highest-multiplier constructions [D, GPTZero published list of October 2024]:** "plays a significant role in shaping" *(182x the human baseline)* · "notable works include" *(120x)* · "in today's fast-paced world" *(107x)* · "aims to explore" *(50x)*
+
+These are the four largest multipliers in GPTZero's published set, and every one of them is a formula rather than a word. That is the same finding core/vocabulary.md's July 2026 review reached from the other direction: the single words in that dataset have decayed since 2024 while the constructions have not, because a phrase encodes a rhetorical move and a word only encodes a preference. Wikipedia's practitioners flag the identical shape under overemphasis on significance, citing "plays a vital role" and "serves as a testament," which is independent confirmation of the pattern rather than of any specific wording.
+
 ### Vague Aims
 - "aims to [verb]" → state what the thing does
 - "is designed to [verb]" → just say what it does

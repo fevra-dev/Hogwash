@@ -42,11 +42,11 @@ Model family works the same way, a lens, not a domain, because which model wrote
 
 ## Current State
 
-31 files (29 markdown, one script, this README), roughly 27,600 words, version 2.21.0. The single most load-bearing finding across every domain added since the resume work: content that's technically correct but interchangeable, the same document that could be sent to any recipient without changing a word, independently confirmed now in resumes, LinkedIn profiles, investor pitch decks, general email, and, per Anthropic's own claude-for-legal documentation, legal work.
+31 files (29 markdown, one script, this README), roughly 28,900 words, version 2.22.0. The single most load-bearing finding across every domain added since the resume work: content that's technically correct but interchangeable, the same document that could be sent to any recipient without changing a word, independently confirmed now in resumes, LinkedIn profiles, investor pitch decks, general email, and, per Anthropic's own claude-for-legal documentation, legal work.
 
 ## Known Open Items
 
-`SKILL.md`'s own footer carries the live version and changelog; check there first, since it will be more current than this section. As of this writing: the wordlist section (`core/vocabulary.md`) is due for its quarterly review, last dated April 2026. The naming decision that had been open through v2.18 is now closed. The former name was already in use by several unrelated projects (a JS linter, an MCP server, a git-branch scanner, a Rust static analyzer, and more); this skill is Hogwash as of v2.19.
+`SKILL.md`'s own footer carries the live version and changelog; check there first, since it will be more current than this section. As of this writing, nothing is overdue. The wordlist section (`core/vocabulary.md`) was reviewed in July 2026 and carries its own review record; the next one is due October 2026. Two entries there (`surpassing`, `tragically`) rest on a single source dated October 2024 and get cut at the next review if nothing corroborates them. The naming decision that had been open through v2.18 is now closed. The former name was already in use by several unrelated projects (a JS linter, an MCP server, a git-branch scanner, a Rust static analyzer, and more); this skill is Hogwash as of v2.19.
 
 ## Installing
 

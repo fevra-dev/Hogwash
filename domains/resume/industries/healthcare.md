@@ -37,6 +37,16 @@ The specific things a model will smooth over when asked to strengthen a clinical
 
 Flag every one of these and ask. Do not resolve them silently, and do not let a rewrite pass introduce them.
 
+## Worked Example
+
+**Before:**
+"Provided compassionate, patient-centered care to diverse patient populations. Utilized electronic health records to document patient information. Collaborated with interdisciplinary teams to improve patient outcomes and satisfaction scores."
+
+**After:**
+"Charge nurse on a 24-bed cardiac ICU, 2:1 and 1:1 assignments, ventilated and post-CABG patients. Documented in Epic; served on the unit's Pyxis discrepancy review after a recurring night-shift count issue. Ran the handoff-script pilot that cut missed telemetry alarms from 9 a week to 2 over four months."
+
+Every clinical detail in the "after" version answers a question the "before" version raised and dropped: which unit, what acuity, which system, which team, what actually changed. The alarm figure is small and unrounded, which is what a real measured result usually looks like. Note also what the rewrite did not do: it did not convert "collaborated with teams" into a leadership claim, because nothing in the source said the candidate led anything. See domains/resume/fabrication.md on the widened verb.
+
 ## Sources
 
 Nursing- and healthcare-resume guidance, 2025–2026: Nurse.org (nursing resume guide), BeamJobs, ResumeVera (nursing examples 2026), ResumeBuilder.com, KG Career Academy (2026 healthcare resume trends and ATS screening). Named-system and acuity examples reflect the consistent recommendation across those sources. The licensure-verification framing is this skill's own Fabrication Risk position applied to a credential class where verification is routine and mandatory, not a claim sourced from those guides.

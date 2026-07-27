@@ -42,6 +42,16 @@ Extends patterns.md's Fabrication Risk into the claims this field makes easy to 
 
 Any of these can be true. The point is that none of them can be invented on the candidate's behalf, and a rewrite pass is where invention happens.
 
+## Worked Example
+
+**Before:**
+"Drove significant revenue growth through strategic account management and consultative selling. Exceeded quota by 120% while managing a portfolio of key accounts. Leveraged CRM tools to optimize pipeline performance."
+
+**After:**
+"Carried a $1.2M new-business quota across 40 mid-market accounts in the Southeast; closed at 118% in FY24 and 94% in FY23. Two deals were most of FY24: a $210K renewal-plus-expansion at [Account] and a $180K displacement of an incumbent. Rebuilt the Salesforce stage definitions after forecast calls kept disagreeing about what 'committed' meant."
+
+The base is now visible, which is the entire fix for this field: quota size, territory, account count, and the deals that actually produced the number. Reporting the 94% year alongside the 118% year costs nothing and is the single strongest credibility signal on the page, because nobody fabricating a record includes the down year. The last line describes an unglamorous fix that only someone who sat through those calls would think to mention.
+
 ## Sources
 
 Finance, accounting, and sales resume guidance, 2025–2026: Resume Worded (finance skills and keywords), Mployee.me (finance ATS keywords), ATS Verification, ResumeAdapter (accounting keywords), The Interview Guys (industry-specific buzzwords). The self-preference effect and its concentration in sales and accounting is Xu, Li, and Jiang, arXiv 2509.00462, final version June 2026, cited in full in domains/resume/patterns.md. The percentage-without-denominator framing is this skill's own Numeric Camouflage rule specialized to these fields.

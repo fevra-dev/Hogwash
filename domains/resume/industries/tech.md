@@ -38,6 +38,16 @@ A direct extension of domains/resume/patterns.md's Fabrication Risk. An in-progr
 
 Several cybersecurity- and developer-resume guides recommend example phrases that are themselves slop by this skill's own standard: "engineered robust information systems security protocols," "orchestrated cloud security implementations." Robust and orchestrated are already Tier 2 territory in domains/resume/patterns.md, and protocols/implementations are exactly the vague nouns this file flags above. A phrase isn't good writing just because a resume-advice site presents it as a positive example. Run it through the same test as everything else here.
 
+## Worked Example
+
+**Before:**
+"Helped improve the company's overall security posture and reduce risk. Utilized various security tools to monitor for threats and respond to incidents. Achieved 99.8% compliance with industry standards and implemented security best practices across the organization."
+
+**After:**
+"Second of two analysts on a 24/7 SOC, roughly 60 alerts a shift in Splunk. Wrote the detection content for credential-stuffing against the customer portal after we missed one for eleven days; it caught the next attempt in under an hour. Mapped our coverage against MITRE ATT&CK and found three tactics with no telemetry at all, which became the FY25 logging budget request."
+
+Three vague claims become one scoped role and two checkable outcomes. "Second of two analysts" is the kind of detail a candidate inflating their scope would never volunteer, and it makes everything after it more believable rather than less. Admitting the eleven-day miss is the same move: it is the detail that proves the story is a memory rather than a construction. Note that "99.8% compliance with industry standards" disappeared entirely rather than being made specific, because the underlying claim was never anything the candidate could name.
+
 ## Sources
 
 Jobscan cybersecurity resume guide, ResumeVera (Cybersecurity Analyst 2026), Resume Worded, CVCompiler, TealHQ, Forbes Technology Council (on "best practices" as a cybersecurity cliche), Coding Temple, AiApply, Resumly certifications guide, BeamJobs and CVEdge (full-stack developer examples). All 2025–2026.

@@ -6,7 +6,7 @@ Run after the first draft. This is the writer pass. If doing a review pass, prod
 
 **Fix-order note:** If time-constrained, run Pass 0 and Pass 3 (structure) before Pass 1 and Pass 5 (vocabulary and punctuation). A piece with a real, specific, falsifiable claim behind it barely reads as AI even with a stray tell left in. A piece with every banned word and em dash removed still reads as AI with no real claim behind it. Metrics diagnose; they aren't targets. Hitting a sentence-length SD or TTR number by mechanical substitution, without fixing the underlying absence of a stance, doesn't remove the tell. It just moves the number.
 
-**Resume note:** if the content is a resume or CV, stop and use domains/resume/patterns.md's own scoring rubric instead of the passes below. Most of what follows assumes paragraphs and sentences; a resume has neither.
+**Resume note:** if the content is a resume or CV, stop and use domains/resume/patterns.md's own scoring rubric instead of the passes below. Most of what follows assumes paragraphs and sentences; a resume has neither. Two of that rubric's five dimensions are scored from their own files: Parseability from domains/resume/ats.md, and Verifiability from domains/resume/fabrication.md, which is mandatory when rewriting an existing resume rather than writing one.
 
 ---
 

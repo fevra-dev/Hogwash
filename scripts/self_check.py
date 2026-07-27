@@ -41,6 +41,10 @@ SOURCES_EXEMPT = {"audit-checklist.md", "README.md", "SKILL.md"}
 # written to these rules, so scanning them buries the real signal.
 EXCLUDED_DIRS = {"adr", "research", ".githooks", "node_modules", ".git"}
 
+# Repo-root files that belong to the repository rather than the skill.
+# CLAUDE.md is agent configuration and ships with no skill bundle.
+EXCLUDED_FILES = {"CLAUDE.md"}
+
 
 def em_dash_density(text):
     words = len(text.split())
@@ -84,6 +88,7 @@ def main():
     md_files = [
         p for p in md_files
         if not EXCLUDED_DIRS.intersection(os.path.relpath(p, root).split(os.sep))
+        and os.path.basename(p) not in EXCLUDED_FILES
     ]
 
     print(f"Checking {len(md_files)} files under {root}\n")

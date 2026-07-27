@@ -63,6 +63,8 @@ Real outcomes are rarely round. "Increased sales by 34%" reads as measured; "inc
 
 Distinct from a style problem. A model asked to "make this sound more impressive" will sometimes invent a specific metric the candidate never provided, "increased revenue by 47%," rather than leave a bullet unquantified. That isn't slop. It's a factual claim that may be false, and it's the candidate's to verify, not this skill's to paper over. If a number in a draft can't be traced back to something the candidate actually said, flag it and ask.
 
+**See domains/resume/fabrication.md** for the full treatment, and load it whenever a resume is being rewritten rather than written from scratch. The dominant failure is not an invented job; it's a widened verb or a supplied number sitting on top of a real employer and real dates, which passes every background check and fails in the interview. That file carries the stakes data, the four places a rewrite introduces a claim, and the traceability test.
+
 ## Skills-Section Over-Inclusion
 
 A long tail of low-relevance skills crammed into a skills section is the resume version of False Ranges: breadth standing in for the specific two or three things that actually matter for this role. Cut to what's both true and relevant to the posting. Shorter and accurate beats exhaustive.
@@ -119,6 +121,28 @@ The goal here isn't an undetectable resume. It's the same goal as the rest of Ho
 
 The point isn't more information, it's traceable information. The "after" version has a team size, a specific decision, a specific number, and an artifact that outlasted the role. None of that is guessable from the "before" version, because none of it was actually there.
 
+### Cover Letter Opening
+
+**Before:**
+"I am writing to express my interest in the Senior Analyst position at your organization. I believe my skills align perfectly with your requirements, and I am confident I would be a valuable addition to your team."
+
+**After:**
+"I read that you're moving reporting off the legacy warehouse this year. I did that migration at a 200-person insurer in 2024, and the part nobody warns you about is that finance will keep running the old reports in parallel for two quarters no matter what the plan says."
+
+The "before" version names the company nowhere, says nothing only this candidate could say, and spends three sentences announcing that an application is being submitted, which the reader already knows. The "after" version takes a position that could be wrong. That is the thing the generic opener structurally cannot do, and it's what makes a person visible on the page.
+
+### LinkedIn Headline and About Opening
+
+**Before:**
+"Visionary Technology Leader | Innovation Catalyst | Driving Digital Transformation
+Passionate about leveraging cutting-edge solutions to deliver impactful results and empower high-performing teams."
+
+**After:**
+"Staff Engineer, payments infrastructure at [Company]
+I work on the boring half of payments: retries, reconciliation, and the failure modes that only show up at month-end close. Previously built the ledger service at [Company]."
+
+Three unfalsifiable nouns become one real job. The About line names a specialty narrow enough to be wrong about, which is what makes it findable by the people looking for exactly that. Note the "before" version would fit any of several thousand profiles without a single edit, which is Untailored Is the Real Tell in its purest form.
+
 ---
 
 ## Scoring Rubric
@@ -130,8 +154,8 @@ Rate 1–10 per dimension. Below 35/50: revise.
 | **Specificity** | Numbers, names, and outcomes, or generic verbs and adjectives? |
 | **Tailoring** | Written for this posting, or the same document sent everywhere? |
 | **Distinctiveness** | Could only this candidate have written this bullet, or would it fit a hundred other resumes? |
-| **Verifiability** | Could the candidate defend every claim in an interview without the story falling apart? |
-| **Parseability** | Clean single-column format an ATS can read, keywords present without stuffing? |
+| **Verifiability** | Could the candidate defend every claim in an interview without the story falling apart? Score from domains/resume/fabrication.md. |
+| **Parseability** | Clean single-column format an ATS can read, keywords present without stuffing? Score from domains/resume/ats.md. |
 
 ---
 

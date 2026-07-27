@@ -194,6 +194,8 @@ When you find an em dash: use comma, semicolon, colon, parentheses, or a new sen
 
 **The base-rate problem.** Em-dash frequency varies more between human writer populations than it does between human and machine: essayists and newsletter writers use them heavily, while writers trained in AP style avoid them almost entirely. A high rate is therefore weak evidence about authorship and stronger evidence about which house style someone learned. This is the same caution this skill applies to detector output, arriving at a punctuation mark.
 
+**The threshold above is not model-agnostic, and this is the larger correction.** Measured across twelve models from five providers, em-dash rates run from 0.0 per 1,000 words in the Llama family to 9.1 in GPT-4.1 *under explicit instruction to suppress them*. One family clears this section's threshold while actively trying not to; another never approaches it. Em-dash frequency is therefore a signature of a specific fine-tuning procedure rather than a property of machine writing, which makes it a family fingerprint that belongs primarily to lenses/model-tells.md. Read that file's em-dash section before letting a count here carry any authorship judgment. The number above remains useful for the thing this skill actually does, which is deciding whether prose has too many em dashes.
+
 ### Bold Overuse
 AI emphasizes phrases in boldface mechanically, especially in lists. Remove most boldface. Save it for genuinely important terms on first mention.
 

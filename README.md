@@ -22,7 +22,7 @@ Three tiers, each answering a different question about what to load.
 
 **lenses/** — cross-cutting. Apply on top of whichever domain file was loaded, not instead of it.
 - `language.md`: what's universal across languages vs. English-specific
-- `model-tells.md`: vocabulary, structure, and framing tells by model family. High-churn; reviewed monthly rather than quarterly.
+- `model-tells.md`: vocabulary, structure, and framing tells by model family. High-churn; reviewed monthly rather than quarterly, with a record. Holds the finding that em-dash frequency is a family fingerprint rather than an AI tell.
 
 `audit-checklist.md` sits at the root next to `SKILL.md`: the actual pass-by-pass process, used regardless of which domain file is loaded.
 
@@ -42,7 +42,7 @@ Model family works the same way, a lens, not a domain, because which model wrote
 
 ## Current State
 
-34 files (32 markdown, one script, this README), roughly 34,700 words, version 2.24.0. The single most load-bearing finding across every domain added since the resume work: content that's technically correct but interchangeable, the same document that could be sent to any recipient without changing a word, independently confirmed now in resumes, LinkedIn profiles, investor pitch decks, general email, and, per Anthropic's own claude-for-legal documentation, legal work.
+34 files (32 markdown, one script, this README), roughly 36,000 words, version 2.25.0. The single most load-bearing finding across every domain added since the resume work: content that's technically correct but interchangeable, the same document that could be sent to any recipient without changing a word, independently confirmed now in resumes, LinkedIn profiles, investor pitch decks, general email, and, per Anthropic's own claude-for-legal documentation, legal work.
 
 ## Known Open Items
 

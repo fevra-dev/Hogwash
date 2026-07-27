@@ -13,7 +13,7 @@ Three tiers, each answering a different question about what to load.
 **core/** — always relevant once this skill triggers, regardless of what's being audited.
 - `vocabulary.md`: banned word lists, evidence-tiered
 - `phrases.md`: banned phrases, openers, structural formulas
-- `structural-patterns.md`: durable rhetorical and structural tells. Weight these most. Wordlists expire; structure doesn't.
+- `structural-patterns.md`: durable rhetorical and structural tells. Weight these most. Wordlists expire; structure doesn't. Its own Formatting Patterns section is the exception and is marked as a separate, decaying tier, since a vendor can suppress a formatting habit with one system-prompt line and did.
 
 **domains/** — what kind of content this actually is. Load only the one that matches.
 - `code.md`, `design.md`, `fiction.md`, `presentations.md`, `legal.md`: each a full medium with its own file
@@ -42,11 +42,11 @@ Model family works the same way, a lens, not a domain, because which model wrote
 
 ## Current State
 
-31 files (29 markdown, one script, this README), roughly 28,900 words, version 2.22.0. The single most load-bearing finding across every domain added since the resume work: content that's technically correct but interchangeable, the same document that could be sent to any recipient without changing a word, independently confirmed now in resumes, LinkedIn profiles, investor pitch decks, general email, and, per Anthropic's own claude-for-legal documentation, legal work.
+31 files (29 markdown, one script, this README), roughly 30,600 words, version 2.23.0. The single most load-bearing finding across every domain added since the resume work: content that's technically correct but interchangeable, the same document that could be sent to any recipient without changing a word, independently confirmed now in resumes, LinkedIn profiles, investor pitch decks, general email, and, per Anthropic's own claude-for-legal documentation, legal work.
 
 ## Known Open Items
 
-`SKILL.md`'s own footer carries the live version and changelog; check there first, since it will be more current than this section. As of this writing, nothing is overdue. The wordlist section (`core/vocabulary.md`) was reviewed in July 2026 and carries its own review record; the next one is due October 2026. Two entries there (`surpassing`, `tragically`) rest on a single source dated October 2024 and get cut at the next review if nothing corroborates them. The naming decision that had been open through v2.18 is now closed. The former name was already in use by several unrelated projects (a JS linter, an MCP server, a git-branch scanner, a Rust static analyzer, and more); this skill is Hogwash as of v2.19.
+`SKILL.md`'s own footer carries the live version and changelog; check there first, since it will be more current than this section. As of this writing, nothing is overdue. The wordlist section (`core/vocabulary.md`) was reviewed in July 2026 and carries its own review record; the next one is due October 2026. Two entries there (`surpassing`, `tragically`) rest on a single source dated October 2024 and get cut at the next review if nothing corroborates them. `core/structural-patterns.md` had its first review in July 2026, also with a record; it runs on a slower cadence, next due January 2027. The naming decision that had been open through v2.18 is now closed. The former name was already in use by several unrelated projects (a JS linter, an MCP server, a git-branch scanner, a Rust static analyzer, and more); this skill is Hogwash as of v2.19.
 
 ## Installing
 

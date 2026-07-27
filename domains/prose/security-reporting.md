@@ -1,6 +1,6 @@
 # Security and Vulnerability Reporting
 
-Part of domains/prose/. Load alongside core/structural-patterns.md. For resume/CV content in this field, see domains/resume/industries/tech.md instead, different medium, different file.
+Part of domains/prose/. Load alongside core/structural-patterns.md. For resume/CV content in this field, see domains/resume/industries/cybersecurity.md instead, different medium, different file.
 
 ## Generic Impact Statements
 

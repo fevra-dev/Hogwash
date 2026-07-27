@@ -30,7 +30,7 @@ Ordered by how easily the candidate misses it happening.
 
 1. **The widened verb.** *Assisted* becomes *led*. *Contributed to* becomes *owned*. *Monitored* becomes *managed*. *Participated in* becomes *drove*. The sentence reads as a stronger version of the same fact, which is exactly why it gets approved without a second look. It is a different fact.
 2. **The supplied number.** A bullet arrives unquantified and comes back quantified. If the candidate never provided a figure, the model produced one to satisfy the instruction to sound measurable. patterns.md's Suspiciously Round Numbers is the stylistic tell for this; the factual problem is the same event.
-3. **The smoothed status.** A credential in progress, lapsed, or partially completed, rendered as simply held. Dates and qualifiers get dropped because they read as clutter. See tech.md on certification status, healthcare.md on licensure, and finance-sales.md on CPA, CFA, and Series 7 levels.
+3. **The smoothed status.** A credential in progress, lapsed, or partially completed, rendered as simply held. Dates and qualifiers get dropped because they read as clutter. See cybersecurity.md on certification and clearance status, healthcare.md on licensure, and finance-sales.md on CPA, CFA, and Series 7 levels.
 4. **The absorbed accomplishment.** Team work rendered in the first person singular by default, so a result the candidate contributed to becomes a result they delivered. Resumes have no grammatical subject by convention (patterns.md, False Agency), which means there is no visible marker distinguishing *the team shipped this* from *I shipped this*. The convention hides the change.
 
 ## The Test

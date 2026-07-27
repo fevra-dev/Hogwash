@@ -6,6 +6,8 @@ Everything else in this skill assumes prose: paragraphs, sentences, a sustained 
 
 **Scope: US conventions.** The tells in this file are about emptiness and sameness, and those travel. The format rules do not. A German Lebenslauf, a Japanese rirekisho, and most Europass CVs expect a photograph, date of birth, and personal details that a US resume deliberately omits, and an academic CV has no page limit and leads with publications rather than employment. Check the target market's convention before applying any structural advice here, and see lenses/language.md for non-English material.
 
+**If the candidate's best evidence isn't employment**, bug bounty findings, CTF placements, CVEs, open-source work, or a home lab, see domains/resume/nontraditional-evidence.md. That material is verifiable in a way employment claims are not, which changes how it should be written.
+
 **Machine parsing is a separate axis.** See domains/resume/ats.md for the Parseability dimension in the rubric below. It covers what breaks a parser, which is a mechanical question independent of whether the writing is any good.
 
 ---

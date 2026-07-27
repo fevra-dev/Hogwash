@@ -8,7 +8,7 @@ Part of domains/resume/industries/. See README.md in this folder for how this fi
 
 ## Named Software Instead of "Proficient in Technology"
 
-The direct parallel to tech.md's named-tool principle. "Proficient in various office technologies" matches nothing an ATS or a reviewer is searching for. Excel, Outlook, Salesforce, QuickBooks, SharePoint: naming the actual tool is the entire fix, and it costs nothing to do.
+The direct parallel to cybersecurity.md's named-tool principle. "Proficient in various office technologies" matches nothing an ATS or a reviewer is searching for. Excel, Outlook, Salesforce, QuickBooks, SharePoint: naming the actual tool is the entire fix, and it costs nothing to do.
 
 ## The Soft-Skill Buzzword Density Problem
 

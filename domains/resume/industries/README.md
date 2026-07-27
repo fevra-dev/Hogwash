@@ -4,10 +4,14 @@ The generic layer in domains/resume/patterns.md (results-driven, proven track re
 
 ## Current Files
 
-- **tech.md**: IT, software development (including full-stack), cybersecurity
+- **full-stack.md**: software development, full-stack and backend
+- **cybersecurity.md**: SOC, incident response, GRC, appsec and cloud security, penetration testing
+- **it-support.md**: help desk, desktop support, systems administration
 - **administrative.md**: administrative and office support roles
 - **healthcare.md**: nursing, allied health, clinical roles
 - **finance-sales.md**: finance, accounting, and sales, grouped because they share one defining tell
+
+The first three replaced a single combined `tech.md` in July 2026. The lesson is worth recording, since it applies to any future file: that file's title claimed IT, software development, and cybersecurity, and of its nine content sections roughly six were cybersecurity, two were development, and none were IT support. A file covering three hiring markets served one and a half of them, and the gap was invisible until someone counted. **Group fields only when they share a defining tell** (see finance-sales.md, which does). Sharing an industry label is not the same thing.
 
 ## Extending to a New Industry
 

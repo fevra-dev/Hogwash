@@ -26,11 +26,11 @@ The fix is the same in each case and costs one clause: name the base, the period
 
 Same mechanism as the other industry files. *Financial systems*, *reporting tools*, *CRM*, and *accounting software* are categories standing in front of proper nouns: SAP, NetSuite, Hyperion, QuickBooks, Workday Financials, Salesforce. The named standard matters as much as the named tool, since GAAP, IFRS, SOX, and ASC 606 are the terms a reviewer and a parser both search for, and "regulatory requirements" matches none of them.
 
-Naming has a ceiling here the way it does in tech.md. Excel is the baseline expectation in every one of these roles, so listing it is not a differentiator. The specific version names what was built in it: a model, a reconciliation, a forecast with a stated horizon.
+Naming has a ceiling here the way it does in full-stack.md. Excel is the baseline expectation in every one of these roles, so listing it is not a differentiator. The specific version names what was built in it: a model, a reconciliation, a forecast with a stated horizon.
 
 ## This Field's "Best Practices"
 
-**"Financial controls"** and **"strategic financial leadership"** in finance, **"consultative selling"** and **"relationship building"** in sales. Each sounds like a methodology and names none. The test from tech.md transfers directly: replace the phrase with the specific control, the specific stage of the pipeline, or the specific account, or cut it.
+**"Financial controls"** and **"strategic financial leadership"** in finance, **"consultative selling"** and **"relationship building"** in sales. Each sounds like a methodology and names none. The test from cybersecurity.md transfers directly: replace the phrase with the specific control, the specific stage of the pipeline, or the specific account, or cut it.
 
 ## Fabrication Risk
 

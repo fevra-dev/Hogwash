@@ -10,13 +10,13 @@ The specific version carries acuity, ratio, and modality: "Managed 2:1 assignmen
 
 ## Named Category Instead of Named System
 
-The same mechanism as tech.md's named-tool principle, with a field-specific vocabulary. "Experienced with electronic health records" matches nothing; Epic, Cerner, Meditech, and Pyxis do. The category words to watch here are *healthcare systems*, *clinical technologies*, *various units*, and *diverse patient populations*, each standing in for a proper noun that exists and could have been named.
+The same mechanism as cybersecurity.md's named-tool principle, with a field-specific vocabulary. "Experienced with electronic health records" matches nothing; Epic, Cerner, Meditech, and Pyxis do. The category words to watch here are *healthcare systems*, *clinical technologies*, *various units*, and *diverse patient populations*, each standing in for a proper noun that exists and could have been named.
 
 Unit and population are part of the same test. "ICU experience" is a category; medical, surgical, cardiac, neuro, and pediatric ICUs are different jobs, and a resume that never says which is doing the vague-category trick in a field where the distinction is the whole qualification.
 
 ## This Field's "Best Practices"
 
-**"Evidence-based practice."** Structurally identical to the problem tech.md flags with *best practices*: reached for to sound rigorous while naming no evidence and no practice. It becomes a real claim when it points at a specific protocol, a bundle, a measured change, or the guideline actually followed. Until then it is a phrase every clinician could write about every shift they have ever worked.
+**"Evidence-based practice."** Structurally identical to the problem cybersecurity.md flags with *best practices*: reached for to sound rigorous while naming no evidence and no practice. It becomes a real claim when it points at a specific protocol, a bundle, a measured change, or the guideline actually followed. Until then it is a phrase every clinician could write about every shift they have ever worked.
 
 *Patient-centered*, *holistic*, and *interdisciplinary* behave the same way in this field and deserve the same treatment.
 

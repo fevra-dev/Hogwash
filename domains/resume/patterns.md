@@ -4,6 +4,10 @@
 
 Everything else in this skill assumes prose: paragraphs, sentences, a sustained argument, a writer taking a position. A resume is a different medium, not just a different domain. Bullet fragments, not sentences. No paragraphs. Impersonal, subjectless phrasing is the correct convention here, not a tell. Most of the rest of this skill does not apply. Load this file instead of domains/prose/ and core/structural-patterns.md for a resume or CV; load it alongside them for a cover letter (see below).
 
+**Scope: US conventions.** The tells in this file are about emptiness and sameness, and those travel. The format rules do not. A German Lebenslauf, a Japanese rirekisho, and most Europass CVs expect a photograph, date of birth, and personal details that a US resume deliberately omits, and an academic CV has no page limit and leads with publications rather than employment. Check the target market's convention before applying any structural advice here, and see lenses/language.md for non-English material.
+
+**Machine parsing is a separate axis.** See domains/resume/ats.md for the Parseability dimension in the rubric below. It covers what breaks a parser, which is a mechanical question independent of whether the writing is any good.
+
 ---
 
 ## What Does Not Apply
@@ -82,6 +86,20 @@ A different hybrid than the cover letter. The headline is closer to the resume's
 Even LinkedIn's own built-in writing assistant comes with a caveat from LinkedIn itself to review before posting, worth remembering that the platform vendor doesn't fully trust its own tool's unedited output either.
 
 ---
+
+## The Machine Screen Wants the Opposite (flagged tension, not resolved here)
+
+Everything above optimizes for a human reader. The first reader is usually not human, and the evidence says it has the opposite preference.
+
+A controlled study across 24 occupations (Xu, Li, and Jiang, arXiv 2509.00462, submitted August 2025, final version June 2026) found that LLM evaluators prefer LLM-written resumes over human-written ones 67 to 82 percent of the time, consistently across commercial and open-source models. In simulated hiring pipelines, a candidate whose resume was written by the same model the employer screens with was 23 to 60 percent more likely to be shortlisted than an equally qualified candidate who wrote their own. The effect was largest in sales and accounting, which is exactly where domains/resume/industries/finance-sales.md applies.
+
+So the document faces two readers who reward opposite things. The automated screen rewards the register this file spends its whole length removing, and the human who reads it next rejects on sight for the same register. This skill takes the human side. Three reasons, stated rather than assumed:
+
+1. The machine advantage is tied to one specific model and disappears when the employer changes vendors. The study's own finding is that simple self-recognition interventions cut the bias by more than half, so this is a closing window, not a strategy.
+2. The advantage only buys a shortlist slot. The interview is where an over-written resume gets tested and fails, and that failure is the documented reason hiring teams adopted reject-on-sight policies to begin with.
+3. A claim written to satisfy a parser is still a claim the candidate has to defend out loud. See Verifiability in the rubric.
+
+What this does change is how to read the outcome signals: passing an automated screen is not evidence the resume is well written, and a rejection at the screening stage is not evidence the writing was too generic. Treat the two as close to independent.
 
 ## Where This Sits in the Bigger Picture
 

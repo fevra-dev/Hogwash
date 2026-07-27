@@ -18,7 +18,7 @@ Three tiers, each answering a different question about what to load.
 **domains/** — what kind of content this actually is. Load only the one that matches.
 - `code.md`, `design.md`, `fiction.md`, `presentations.md`, `legal.md`: each a full medium with its own file
 - `prose/`: one file per genre, loaded alongside core/structural-patterns.md: `academic.md`, `technical-docs.md`, `marketing.md`, `support.md`, `email.md`, `security-reporting.md`, `social-linkedin.md`, and `tone-calibration.md` (an intent that cuts across the others, not a genre itself)
-- `resume/`: `patterns.md` is the resume/CV scope note; `industries/` holds field-specific vocabulary (`tech.md`, `administrative.md`, plus a README for adding more fields)
+- `resume/`: `patterns.md` is the resume/CV scope note; `ats.md` covers machine parsing, a separate axis from writing quality; `industries/` holds field-specific vocabulary (`tech.md`, `administrative.md`, `healthcare.md`, `finance-sales.md`, plus a README for adding more fields)
 
 **lenses/** — cross-cutting. Apply on top of whichever domain file was loaded, not instead of it.
 - `language.md`: what's universal across languages vs. English-specific
@@ -42,7 +42,7 @@ Model family works the same way, a lens, not a domain, because which model wrote
 
 ## Current State
 
-26 files (24 markdown, one script, this README), roughly 22,300 words, version 2.19.0. The single most load-bearing finding across every domain added since the resume work: content that's technically correct but interchangeable, the same document that could be sent to any recipient without changing a word, independently confirmed now in resumes, LinkedIn profiles, investor pitch decks, general email, and, per Anthropic's own claude-for-legal documentation, legal work.
+30 files (28 markdown, one script, this README), roughly 25,500 words, version 2.20.0. The single most load-bearing finding across every domain added since the resume work: content that's technically correct but interchangeable, the same document that could be sent to any recipient without changing a word, independently confirmed now in resumes, LinkedIn profiles, investor pitch decks, general email, and, per Anthropic's own claude-for-legal documentation, legal work.
 
 ## Known Open Items
 

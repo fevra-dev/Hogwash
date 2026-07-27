@@ -6,6 +6,8 @@ The generic layer in domains/resume/patterns.md (results-driven, proven track re
 
 - **tech.md**: IT, software development (including full-stack), cybersecurity
 - **administrative.md**: administrative and office support roles
+- **healthcare.md**: nursing, allied health, clinical roles
+- **finance-sales.md**: finance, accounting, and sales, grouped because they share one defining tell
 
 ## Extending to a New Industry
 

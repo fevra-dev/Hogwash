@@ -14,7 +14,7 @@ In *Withers v. City of Aberdeen* (N.D. Mississippi, June 2026), a judge canceled
 
 ## Why This Is the Sharpest Version of a Pattern Already in This Skill
 
-domains/code.md's umbrella question asks whether something actually does what it looks like it does, or just has the shape of doing it. A hallucinated legal citation is the purest possible instance of that question: a case name, a court, a year, a page number, formatted in perfect Bluebook style, citing a holding that sounds exactly like something a real court would say. Structurally plausible. Functionally nonexistent. The formatting is precisely why it gets past a skim, a well-formatted fake is indistinguishable from a well-formatted real citation without actually looking it up.
+domains/code/patterns.md's umbrella question asks whether something actually does what it looks like it does, or just has the shape of doing it. A hallucinated legal citation is the purest possible instance of that question: a case name, a court, a year, a page number, formatted in perfect Bluebook style, citing a holding that sounds exactly like something a real court would say. Structurally plausible. Functionally nonexistent. The formatting is precisely why it gets past a skim, a well-formatted fake is indistinguishable from a well-formatted real citation without actually looking it up.
 
 A subtler, related failure mode showed up in the Sixth Circuit case specifically: citations to real cases that don't actually say what the brief claims they say. Not fabrication, misrepresentation. Both are the same underlying problem: a citation that exists to support a point rather than to report what a source actually held.
 

@@ -1,8 +1,15 @@
 # Code Patterns — AI Anti-Patterns in Code
 
-Synthesized from sloppylint, OX Security 300+ repo analysis, CodeRabbit AI vs. human PR study 2025, Uplevel developer survey 2024, USENIX package hallucination study (arXiv:2406.10279), and aihero.dev's "Tracer Bullets" article (2026, applying a technique from *The Pragmatic Programmer* to AI agent workflows specifically).
+Part of domains/code/. This file is the language-level catalog: what AI-written code looks like when you read it. The other four answer different questions and are loaded separately.
 
-**The umbrella question:** most of what follows is one defect class wearing different outfits, code that is *structurally plausible but functionally empty*. Placeholder code, hallucinated imports, and mock-echo tests all pass a skim; none of them do what they appear to do. Ask this question first, per file: does this actually do the thing it looks like it does, or does it just have the shape of doing it?
+- **[security.md](security.md)** — is it exploitable? A different axis from whether it reads badly, and the one with hard comparative numbers behind it.
+- **[supply-chain.md](supply-chain.md)** — what does it import, and does that package exist? Now an active attack vector rather than a correctness problem.
+- **[agentic.md](agentic.md)** — how was it produced? Autocomplete and an autonomous agent fail differently, and the agent failure compounds.
+- **[enforcement.md](enforcement.md)** — making the rest impossible to commit, rather than catching it afterward.
+
+**The umbrella question, shared across all five:** most of what follows is one defect class wearing different outfits, code that is *structurally plausible but functionally empty*. Placeholder code, hallucinated imports, and mock-echo tests all pass a skim; none of them do what they appear to do. Ask this question first, per file: does this actually do the thing it looks like it does, or does it just have the shape of doing it?
+
+**Scope note on languages.** The examples below are mostly Python and TypeScript, which reflects where the source studies looked rather than where the problem is. Where a pattern is known to differ by language, it says so. The one measured difference worth carrying: in Veracode's 2026 testing across 100+ models and 80 tasks, 45% of AI-generated samples failed security tests overall, and Java failed at 72%. Language choice changes the base rate, so do not read a clean Python result as a statement about a Java codebase.
 
 ---
 
@@ -123,7 +130,9 @@ from ml_utils import smart_predict  # package does not exist
 import datascience as ds  # not a real library
 from helper_tools import magic_function  # does not exist
 ```
-~20% of AI-suggested package imports reference non-existent libraries (USENIX study arXiv:2406.10279). Verify every import against a real package before shipping.
+Roughly 20% of AI-suggested package imports reference non-existent libraries. Verify every import against a real package before shipping.
+
+**This stopped being only a correctness problem.** Attackers now register the hallucinated names, so installing one can execute their code rather than failing. See [supply-chain.md](supply-chain.md), which covers why these names are predictable enough to squat and what to do about it.
 
 ### Missing Adversarial Input Handling
 AI writes for well-formed inputs. Check every public-facing function:
@@ -132,6 +141,8 @@ AI writes for well-formed inputs. Check every public-facing function:
 - Handling of malformed/malicious input that doesn't fit the happy path?
 - SQL injection protection on user-supplied values?
 - Path traversal protection on user-supplied file paths?
+
+This checklist is the reading-level version. [security.md](security.md) carries the measured defect distribution behind it, which changes what to check first: injection-class weaknesses alone account for roughly a third of confirmed vulnerabilities in AI-generated code.
 
 ---
 
@@ -198,34 +209,12 @@ The fix isn't just adding `try/except`. It's asking "what should actually happen
 
 ---
 
-## THE WORKFLOW LAYER: TRACER BULLETS
+## Where the Other Files Pick Up
 
-A second prevention layer, different in kind from the Enforcement Layer below: that one blocks bad code from being committed, this one changes how the code gets built in the first place, before there's anything to commit or catch.
-
-**Why this connects to the umbrella question above.** Left unconstrained, an agent tends to build every horizontal layer of a feature (models, endpoints, middleware, auth, logging) before ever testing whether the critical path works at all. Only after all of it exists does anyone discover the database connection string was wrong, or the column type didn't match. That's not a coincidence, it's the direct mechanism behind structurally-plausible-but-functionally-empty code: a large, complete-looking deliverable with an untested core, built in the dark with no feedback loop until the very end.
-
-**The fix, borrowed from a much older idea.** *The Pragmatic Programmer* calls this failure mode "outrunning your headlights," building faster than your feedback loop can catch you. Its own answer, tracer bullets, is a small, end-to-end vertical slice: one path through every layer the feature touches, working and tested, before any of the layers get built out further. Asked to add a "reveal in file system" action available from four different places in an app, the tracer-bullet version is the backend endpoint wired to exactly one of those four locations first, confirmed working, then expanded to the rest, not all four UI locations and the endpoint built simultaneously and tested at the end.
-
-**Why this bites harder with agents than with a human developer.** A human notices when they've been coding for an hour without running anything. An agent doesn't have that instinct, and a full context window makes the discipline non-negotiable rather than just good practice: by the time something this large fails, there's no budget left to meaningfully backtrack.
-
-**Practical instruction, for a build-feature prompt or skill:** when a feature touches multiple layers or multiple integration points, name the smallest end-to-end slice explicitly and ask for that first, tested, before any expansion. "Build the one thing that proves the hard part works" beats "build the whole feature" as an opening instruction almost every time.
-
-## THE ENFORCEMENT LAYER (from Bootoshi)
-
-Wordlists are advisory. ESLint/Ruff rules are structural. Build both layers.
-
-The mock echo pattern, bare except, and `console.log` in production can all be made impossible to commit with a custom lint rule. An agent hits a lint error and must write something real. This is categorically more reliable than a post-hoc audit.
-
-Recommended candidates for custom lint rules in your codebase:
-1. Mock echo pattern (test file linter)
-2. `@ts-ignore` without explanation comment
-3. `console.log` in non-test files
-4. `any` type without explanation comment
-5. Empty `except` blocks
-6. Functions longer than N lines without documentation
+The two prevention layers that used to live here have moved, because they answer questions this file does not. Building code so the failure cannot happen is in [agentic.md](agentic.md); making it impossible to commit is in [enforcement.md](enforcement.md).
 
 ---
 
 ## Sources
 
-sloppylint, OX Security 300+ repo analysis, CodeRabbit AI vs. human PR study 2025, Uplevel developer survey 2024, USENIX package hallucination study (arXiv:2406.10279), part of the original v2.2 skill (see SKILL.md's frontmatter for that broader source list). The Workflow Layer above is separately sourced: aihero.dev's "Tracer Bullets" article (2026), itself applying a technique from *The Pragmatic Programmer* to AI agent workflows specifically.
+sloppylint, OX Security 300+ repo analysis, CodeRabbit AI vs. human PR study 2025, Uplevel developer survey 2024, USENIX package hallucination study (arXiv:2406.10279), part of the original v2.2 skill (see SKILL.md's frontmatter for that broader source list). Veracode's 2026 language-failure-rate figures in the scope note are cited in full in security.md. The Workflow Layer that used to close this file now lives in agentic.md with its sourcing.

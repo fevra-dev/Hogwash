@@ -87,7 +87,7 @@ Before auditing for bans, verify the writing is working toward something.
 
 ---
 
-## PASS 6 — CODE (load domains/code.md for full detail)
+## PASS 6 — CODE (load domains/code/patterns.md for full detail; add security.md, supply-chain.md, agentic.md as scope requires)
 
 - [ ] Any `pass` with a comment? Implement or remove.
 - [ ] Any bare `except`? Catch specific exceptions.
@@ -97,8 +97,11 @@ Before auditing for bans, verify the writing is working toward something.
 - [ ] Any `@ts-ignore` without explanation? Document or fix the underlying type issue.
 - [ ] Any `console.log` / `print()` in non-debug code? Remove.
 - [ ] Any commented-out code blocks? Remove or open a ticket.
-- [ ] Any hallucinated imports? Verify every package exists.
+- [ ] Any hallucinated imports? Verify every package exists, and check it against the real registry rather than assuming a failed install is the worst case (domains/code/supply-chain.md).
 - [ ] Tests: do they test behavior, or just that mocking works?
+- [ ] Injection first, then SSRF, then XSS: those three carry most of the measured risk in AI-generated code (domains/code/security.md).
+- [ ] Any new dependency: did a human decide to add it, or did the model?
+- [ ] Written by an agent? Ask how many iterations produced it (five or more carries a measured security regression), whether anything outside the generating session verified it, and whether tests changed in the same commit as the implementation (domains/code/agentic.md).
 
 ---
 

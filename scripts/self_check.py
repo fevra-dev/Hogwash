@@ -46,9 +46,26 @@ EXCLUDED_DIRS = {"adr", "research", ".githooks", "node_modules", ".git"}
 EXCLUDED_FILES = {"CLAUDE.md"}
 
 
+STRUCTURAL_LINE = re.compile(r"^\s*([-*+]|\d+\.|#{1,6}|\||>)\s*")
+
+
 def em_dash_density(text):
-    words = len(text.split())
-    dashes = text.count("\u2014")
+    """Counted over flowing prose only, per core/structural-patterns.md.
+
+    Reference-list labels, headings, and table cells use the
+    `- **Term** - definition` construction as an ordinary documentation
+    convention, and that section exempts them explicitly. Counting them
+    against a whole-document word count inflates the rate badly: measured
+    against a 225-file corpus, roughly 60% of a naive flag list was this
+    artifact rather than a property of the writing. Numerator and
+    denominator both come from prose lines so they stay comparable.
+    """
+    prose = "\n".join(
+        line for line in text.split("\n")
+        if line.strip() and not STRUCTURAL_LINE.match(line)
+    )
+    words = len(prose.split())
+    dashes = prose.count("\u2014")
     rate = (dashes * 1000 / words) if words else 0
     return dashes, words, rate
 

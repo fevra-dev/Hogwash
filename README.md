@@ -16,7 +16,8 @@ Three tiers, each answering a different question about what to load.
 - `structural-patterns.md`: durable rhetorical and structural tells. Weight these most. Wordlists expire; structure doesn't. Its own Formatting Patterns section is the exception and is marked as a separate, decaying tier, since a vendor can suppress a formatting habit with one system-prompt line and did.
 
 **domains/** — what kind of content this actually is. Load only the one that matches.
-- `design.md`, `fiction.md`, `presentations.md`, `legal.md`: each a full medium with its own file
+- `fiction.md`, `presentations.md`, `legal.md`: each a full medium with its own file
+- `design/`: four files, `patterns.md` (the static catalog, now opening with why sanded-down minimalism is itself the AI default), `motion.md`, `accessibility.md`, `expressive.md` (when loud is the brief, the design counterpart to `fiction.md`)
 - `code/`: five files answering different questions about the same artifact, `patterns.md` (what it looks like), `security.md` (is it exploitable), `supply-chain.md` (does that package exist), `agentic.md` (who wrote it, and how many times), `enforcement.md` (make the rest impossible)
 - `prose/`: one file per genre, loaded alongside core/structural-patterns.md: `academic.md`, `technical-docs.md`, `marketing.md`, `support.md`, `email.md`, `security-reporting.md`, `social-linkedin.md`, and `tone-calibration.md` (an intent that cuts across the others, not a genre itself)
 - `resume/`: `patterns.md` is the resume/CV scope note; `ats.md` covers machine parsing, a separate axis from writing quality; `fabrication.md` covers claims a rewrite introduces that the candidate can't defend, the resume counterpart to `legal.md`; `nontraditional-evidence.md` covers bug bounty, CTF, CVE, open-source and home-lab material, where the evidence is unusually verifiable; `industries/` holds field-specific vocabulary (`full-stack.md`, `cybersecurity.md`, `it-support.md`, `administrative.md`, `healthcare.md`, `finance-sales.md`, plus a README for adding more fields)
@@ -43,7 +44,7 @@ Model family works the same way, a lens, not a domain, because which model wrote
 
 ## Current State
 
-38 files (36 markdown, one script, this README), roughly 40,000 words, version 2.26.0. The single most load-bearing finding across every domain added since the resume work: content that's technically correct but interchangeable, the same document that could be sent to any recipient without changing a word, independently confirmed now in resumes, LinkedIn profiles, investor pitch decks, general email, and, per Anthropic's own claude-for-legal documentation, legal work.
+41 files (39 markdown, one script, this README), roughly 43,600 words, version 2.27.0. The single most load-bearing finding across every domain added since the resume work: content that's technically correct but interchangeable, the same document that could be sent to any recipient without changing a word, independently confirmed now in resumes, LinkedIn profiles, investor pitch decks, general email, and, per Anthropic's own claude-for-legal documentation, legal work.
 
 ## Known Open Items
 

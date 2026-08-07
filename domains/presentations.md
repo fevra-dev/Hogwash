@@ -1,6 +1,6 @@
 # Presentations and Slide Decks
 
-Part of domains/. Different from domains/fiction.md in one important way: this domain mostly doesn't need new machinery. It's the same patterns already in this skill, showing up one level up, at the slide instead of the sentence or paragraph. Load alongside core/structural-patterns.md and domains/design.md; this file is the slide-specific instantiation of both, not a replacement for either.
+Part of domains/. Different from domains/fiction.md in one important way: this domain mostly doesn't need new machinery. It's the same patterns already in this skill, showing up one level up, at the slide instead of the sentence or paragraph. Load alongside core/structural-patterns.md and domains/design/patterns.md; this file is the slide-specific instantiation of both, not a replacement for either.
 
 ---
 
@@ -16,8 +16,8 @@ A deck is text and image doing the same job side by side, and AI slop shows up o
 
 The single most-cited AI tell in current deck-critique writing is this: every bullet the same length, three to four bullets per slide, each one starting with a verb. That's Rule of Three and this skill's bullet-opener patterns, just one level up from where they usually get caught. A few more slide-level instances of patterns already in this skill:
 
-- **Identical layout, slide after slide, just the text swapped.** This is domains/design.md's Section-Layout-Repetition Rule, verbatim, just at deck scale instead of page scale.
-- **The same narrow icon set and stock-photo style across completely unrelated decks.** domains/design.md's hand-rolled-icon and generic-imagery notes, same mechanism.
+- **Identical layout, slide after slide, just the text swapped.** This is domains/design/patterns.md's Section-Layout-Repetition Rule, verbatim, just at deck scale instead of page scale.
+- **The same narrow icon set and stock-photo style across completely unrelated decks.** domains/design/patterns.md's hand-rolled-icon and generic-imagery notes, same mechanism.
 - **Headings and content with nothing specific to the actual company or team.** Untailored Is the Real Tell from domains/resume/patterns.md, restated for slides: swap the logo and nothing else would need to change.
 
 None of this needed new philosophy to explain. It needed slide-specific examples, which is most of what this file actually adds.

@@ -98,6 +98,12 @@ Flag any two adjacent sentences with the same subject position, same clause stru
 
 Independently confirmed at the July 2026 review, where 2026 detection writing reports the "not just X, but Y" construction arriving at roughly one per paragraph in model output. That is an order of magnitude above the threshold above, which suggests the threshold is set correctly rather than conservatively.
 
+### Rhetorical Question, Immediately Answered
+"What does this mean for developers? It means..." / "So why does this matter? Because..." / "The result? A faster pipeline." A Wh- or yes/no question posed only to answer it in the next breath. The question is not a real question; it is a setup, and it is one of the most reliable AI structural tells because it manufactures the appearance of a thought-progression without the substance of one. State the answer directly and delete the question. A genuine rhetorical question is left hanging for the reader to sit with; this pattern never does, which is how you tell them apart. Related to Binary Contrast Drama above, the same manufactured-tension move in interrogative form.
+
+### Narrator From a Distance
+A voice-level pattern, and the name is the useful part rather than any new rule. AI defaults to a generalizing, omniscient remove, "across the industry, teams have found," "in the world of X, one thing is clear," reporting on a topic from above rather than from inside it. This is the voice-level expression of the skill's root principle (the absence of a writer) and of Specificity Erasure's generic subject. It earns a name because the fix is a single move applied to stance rather than to any one sentence: drop to a specific vantage. Who found this, where, when. If the prose could narrate any topic without changing its footing, it has no footing.
+
 ### False Agency / Subjectless Framing
 AI gives inanimate things human verbs to avoid naming actual actors.
 

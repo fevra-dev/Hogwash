@@ -28,7 +28,7 @@ Three tiers, each answering a different question about what to load.
 
 `audit-checklist.md` sits at the root next to `SKILL.md`: the actual pass-by-pass process, used regardless of which domain file is loaded.
 
-`scripts/self_check.py` runs this skill's own content-quality rules against itself: em-dash density, Tier-1 banned-word hits, stale cross-references left over from file moves, and Sources-section presence. Complements skill-creator's format validator rather than replacing it; that one checks frontmatter validity, this one checks the content rules Hogwash teaches. Every flag needs a human or Opus judgment call afterward, headers and quoted bad-example specimens are legitimate exceptions the script can't distinguish from real hits on its own.
+`scripts/self_check.py` runs this skill's own content-quality rules against itself: em-dash density, Tier-1 banned-word hits, stale cross-references left over from file moves, Sources-section presence, and a research-reconciliation pass. That last one exists because research kept producing good material that never landed in the shipped files, invisible unless someone diffed the two by hand; the check flags any `research/` doc that proposes changes without a `## Ship Status` ledger recording whether each one shipped, so the gap surfaces on every run instead of by accident. Complements skill-creator's format validator rather than replacing it; that one checks frontmatter validity, this one checks the content rules Hogwash teaches. Every flag needs a human or Opus judgment call afterward, headers and quoted bad-example specimens are legitimate exceptions the script can't distinguish from real hits on its own.
 
 ## Why This Shape
 
@@ -44,7 +44,7 @@ Model family works the same way, a lens, not a domain, because which model wrote
 
 ## Current State
 
-41 files (39 markdown, one script, this README), roughly 43,600 words, version 2.27.0. The single most load-bearing finding across every domain added since the resume work: content that's technically correct but interchangeable, the same document that could be sent to any recipient without changing a word, independently confirmed now in resumes, LinkedIn profiles, investor pitch decks, general email, and, per Anthropic's own claude-for-legal documentation, legal work.
+41 files (39 markdown, one script, this README), roughly 44,000 words, version 2.28.0. The single most load-bearing finding across every domain added since the resume work: content that's technically correct but interchangeable, the same document that could be sent to any recipient without changing a word, independently confirmed now in resumes, LinkedIn profiles, investor pitch decks, general email, and, per Anthropic's own claude-for-legal documentation, legal work.
 
 ## Known Open Items
 

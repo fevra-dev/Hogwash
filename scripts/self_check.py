@@ -88,6 +88,42 @@ def find_banned_words(text):
     return hits
 
 
+# Language that signals a research doc is proposing a change to the skill.
+# Three times this session, research produced a merge recommendation that
+# never landed in the shipped files, and the gap was invisible without
+# diffing the two by hand. A doc containing any of these owes a ## Ship
+# Status ledger reconciling each recommendation, or the check keeps flagging.
+RECO_MARKERS = [
+    "worth adding", "worth considering", "consider adding", "should add",
+    "should ship", "not shipped", "not yet in", "isn't in", "aren't in",
+    "add to", "merge into", "flagged for your call", "worth pursuing",
+    "recommend adding", "belongs in", "hasn't shipped", "never shipped",
+]
+SHIP_LEDGER_HEADING = "## Ship Status"
+
+
+def scan_research_reconciliation(root):
+    """Flag research docs whose recommendations have no reconciliation ledger.
+
+    Heuristic, not a parser: a hit means 'this doc proposes changes and
+    hasn't recorded whether they shipped', which is a prompt to reconcile,
+    not a verdict. Docs with a ## Ship Status section are assumed handled;
+    the human writing that section is the actual reconciliation step.
+    """
+    research_dir = os.path.join(root, "research")
+    results = []
+    if not os.path.isdir(research_dir):
+        return results
+    for path in sorted(glob.glob(os.path.join(research_dir, "*.md"))):
+        text = open(path, encoding="utf-8").read()
+        low = text.lower()
+        markers = sorted({m for m in RECO_MARKERS if m in low})
+        has_ledger = SHIP_LEDGER_HEADING.lower() in low
+        if markers and not has_ledger:
+            results.append((os.path.relpath(path, root), markers))
+    return results
+
+
 def check_description_length(skill_md_path):
     text = open(skill_md_path, encoding="utf-8").read()
     m = re.search(r'description:\s*"(.*?)"\n', text, re.DOTALL)
@@ -166,6 +202,18 @@ def main():
     if sources_missing:
         for rel in sources_missing:
             print(f"  {rel}")
+    else:
+        print("  none")
+
+    print("\n=== Research docs with unreconciled recommendations ===")
+    print("(A research doc that proposes changes owes a '## Ship Status'")
+    print(" ledger recording whether each shipped. Without one, good")
+    print(" material goes invisible. Add the ledger to clear the flag.)")
+    reco = scan_research_reconciliation(root)
+    if reco:
+        for rel, markers in reco:
+            print(f"  {rel}: proposes changes ({', '.join(markers[:4])}"
+                  f"{'...' if len(markers) > 4 else ''}), no {SHIP_LEDGER_HEADING}")
     else:
         print("  none")
 
